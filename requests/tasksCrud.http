@@ -1,3 +1,9 @@
+## GET ALL tasks
+GET http://localhost:5000/tasks HTTP/1.1
+
+###
+
+### Create task
 POST http://localhost:5000/tasks HTTP/1.1
 Content-Type: application/json
 
@@ -6,3 +12,50 @@ Content-Type: application/json
   "deadline": "2024-09-06",
   "isDone": "false"
 }
+
+###
+
+### Find task by ID
+
+GET http://localhost:5000/tasks/fec5a357 HTTP/1.1
+
+###
+
+# task not found
+GET http://localhost:5000/tasks/fec5a354547 HTTP/1.1
+
+###
+
+# UPDATE TASK
+PATCH  http://localhost:5000/tasks/fec5a357 HTTP/1.1
+Content-Type: application/json
+
+{
+  "body": "Complete the React project CSS",
+  "deadline": "2024-09-15"
+}
+
+
+###
+
+# task not found
+PATCH  http://localhost:5000/tasks/fecfec5a3575a357 HTTP/1.1
+Content-Type: application/json
+
+{
+  "body": "Complete the React project CSS",
+  "deadline": "2024-09-15"
+}
+
+###
+
+# DELETE TASK
+DELETE  http://localhost:5000/tasks/fec5a357 HTTP/1.1
+
+###
+
+# task not found
+DELETE  http://localhost:5000/tasks/fec5a354543547 HTTP/1.1
+
+
+
