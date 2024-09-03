@@ -1,9 +1,10 @@
 const express = require('express');
+const { v4: uuidv4 } = require('uuid');
+const { createTask } = require('./controllers/taskControllers');
 
 const app = express();
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.status(200).send('Hello, word');
-});
+app.post('/tasks', createTask);
 
 module.exports = app;
