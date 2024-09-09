@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "express": "^4.19.2",
-    "uuid": "^10.0.0"
+    "http-errors": "^2.0.0",
+    "uuid": "^10.0.0",
+    "yup": "^1.4.0"
   },
   "name": "express-app-homework",
   "version": "1.0.0",

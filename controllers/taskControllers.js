@@ -1,25 +1,26 @@
 const { v4: uuidv4 } = require('uuid');
+const { tasks } = require('../model');
 
-const tasks = [
-  {
-    id: 'fec5a357',
-    body: 'Complete the React project',
-    deadline: '2024-09-10',
-    isDone: false,
-  },
-  {
-    id: uuidv4(),
-    body: 'Prepare for the meeting',
-    deadline: '2024-09-05',
-    isDone: true,
-  },
-  {
-    id: uuidv4(),
-    body: 'Buy groceries',
-    deadline: '2024-09-07',
-    isDone: false,
-  },
-];
+// const tasks = [
+//   {
+//     id: 'fec5a357',
+//     body: 'Complete the React project',
+//     deadline: '2024-09-10',
+//     isDone: false,
+//   },
+//   {
+//     id: uuidv4(),
+//     body: 'Prepare for the meeting',
+//     deadline: '2024-09-05',
+//     isDone: true,
+//   },
+//   {
+//     id: uuidv4(),
+//     body: 'Buy groceries',
+//     deadline: '2024-09-07',
+//     isDone: false,
+//   },
+// ];
 
 module.exports.getTasks = (req, res) => {
   res.status(200).send(tasks);
