@@ -17,38 +17,40 @@ module.exports.createTask = (req, res) => {
   res.status(201).send(createdTask);
 };
 
-module.exports.getTaskById = (req, res) => {
+module.exports.getTaskById = (req, res, next) => {
   const { id } = req.params;
 
   const foundTask = task.getTaskById(id);
 
   if (!foundTask) {
-    return res.status(404).send('Task Not Found');
+    return next(createError(404, 'Task Not Found'));
   }
 
   res.status(200).send(foundTask);
 };
 
-module.exports.updateTaskById = (req, res) => {
-  const { id } = req.params;
-  const { body } = req;
+module.exports.updateTaskById = (req, res, next) => {
+  const {
+    params: { id },
+    body,
+  } = req;
 
   const updateTask = task.getTaskById(id, body);
 
   if (!updateTask) {
-    return res.status(404).send('Task Not Found');
+    return next(createError(404, 'Task Not Found'));
   }
 
   res.status(200).send(updateTask);
 };
 
-module.exports.deleteTaskById = (req, res) => {
+module.exports.deleteTaskById = (req, res, next) => {
   const { id } = req.params;
 
   const foundTask = task.deleteTask(id);
 
   if (!foundTask) {
-    return res.status(404).send('Task Not Found');
+    return next(createError(404, 'Task Not Found'));
   }
 
   res.status(200).send();

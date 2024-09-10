@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
   "body": "Complete the homework",
-  "deadline": "2025-09-06",
+  "deadline": "2024-10-06",
   "isDone": "false"
 }
 
@@ -51,7 +51,6 @@ Content-Type: application/json
   "body": "Complete the React project CSS",
   "deadline": "2024-10-15"
 }
-
 
 ###
 

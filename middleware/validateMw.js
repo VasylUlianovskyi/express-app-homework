@@ -7,9 +7,6 @@ module.exports.validateTaskOnCreate = async (req, res, next) => {
     req.body = validatedTask;
     next();
   } catch (err) {
-    console.log(err);
-    res.status(422).send(err.errors);
+    next(err);
   }
-
-  next();
 };
