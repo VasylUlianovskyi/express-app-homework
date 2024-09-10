@@ -103,7 +103,7 @@ class TaskDb {
   }
 
   createTask (newTask) {
-    this.contacts.push({ ...newTask, id: uuidv4(), isDone: false });
+    this.tasks.push({ ...newTask, id: uuidv4(), isDone: false });
     return this.tasks[this.tasks.length - 1];
   }
 

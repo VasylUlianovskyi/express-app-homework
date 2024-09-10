@@ -1,1 +1,1 @@
-module.exports.tasks = require('./task');
+module.exports.task = require('./task');
