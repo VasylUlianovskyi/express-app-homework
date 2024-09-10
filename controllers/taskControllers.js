@@ -2,7 +2,7 @@ const createError = require('http-errors');
 const { task } = require('./../model');
 
 module.exports.getTasks = (req, res) => {
-  const { page, results } = req.query;
+  const { page, results } = req.pagination;
 
   const foundTasks = task.getTask(page, results);
 
